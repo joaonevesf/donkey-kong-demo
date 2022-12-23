@@ -500,12 +500,15 @@ are private and can only be tested through the step method. We also tried to rea
 
 ### TESTING
 
-![test coverage on intermediate delivery](img/testcoverage1.png)
+
+![test coverage on final delivery](img/testcoveragefinal.png)
 
 
-![mutation results on intermediate delivery](img/mutation-results-print.png)
 
-- [mutation test results intermediate](mutation-test-results)
+![mutation results on final delivery](img/mutation-results-print-final.png)
+
+
+- [mutation test results](mutation-test-results-final)
 
 ### SELF-EVALUATION
 
