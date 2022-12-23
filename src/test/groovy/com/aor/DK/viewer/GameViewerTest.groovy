@@ -1,6 +1,8 @@
 package com.aor.DK.viewer
 
 import com.aor.DK.GUI.GUI
+import com.aor.DK.GUI.LanternaGUI
+import com.aor.DK.model.Position
 import com.aor.DK.model.arena.Arena
 import com.aor.DK.model.elements.*
 import com.aor.DK.model.ranking.Scores
@@ -38,8 +40,8 @@ class GameViewerTest extends Specification {
         gameViewer.drawElements(gui)
 
         then:
-        1 * gui.drawLevel(_, _)
-        1 * gui.drawScores(_, _, _)
+        1 * gui.drawLevel(new Position(36, 1), gameViewer.getModel().getLevel());
+        1 * gui.drawScores(new Position(0, 1), gameViewer.getModel().getScores().getJumpScore(), gameViewer.getModel().getScores().getTimeScore())
     }
 
 }

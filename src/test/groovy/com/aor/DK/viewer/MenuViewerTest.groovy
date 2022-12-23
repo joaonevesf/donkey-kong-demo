@@ -1,5 +1,6 @@
 package com.aor.DK.viewer
 
+import com.aor.DK.GUI.GUI
 import com.aor.DK.GUI.LanternaGUI
 import com.aor.DK.model.Position
 import com.aor.DK.model.menu.Menu
@@ -11,10 +12,15 @@ import spock.lang.Specification
 
 class MenuViewerTest extends Specification{
 
+    GUI gui
+
+    def setup(){
+        gui = Mock(GUI)
+    }
+
     def 'Testing draw elements' (){
         given:
         def viewer = new MenuViewer(new Menu("Instructions"))
-        def gui = Mock(LanternaGUI.class, constructorArgs:[30, 30])
         when:
         viewer.drawElements(gui)
         then:
@@ -27,7 +33,6 @@ class MenuViewerTest extends Specification{
         int x = 2
         int y = 12
         def viewer = new InstructionsViewer(new Menu("Instructions"))
-        def gui = Mock(LanternaGUI.class, constructorArgs:[30,30])
 
         when:
         viewer.drawElements(gui)
@@ -57,7 +62,6 @@ class MenuViewerTest extends Specification{
     def 'Testing start menu viewer'() {
         given:
         def viewer = new StartViewer(new Menu("Start"))
-        def gui = Mock(LanternaGUI.class, constructorArgs: [30, 30])
         when:
         viewer.drawElements(gui)
         then:
@@ -69,7 +73,6 @@ class MenuViewerTest extends Specification{
     def 'Testing win menu viewer'() {
         given:
         def viewer = new WinViewer(new Menu("Start"))
-        def gui = Mock(LanternaGUI.class, constructorArgs: [30, 30])
         when:
         viewer.drawElements(gui)
         then:
@@ -79,7 +82,6 @@ class MenuViewerTest extends Specification{
     def 'Testing lost menu viewer'() {
         given:
         def viewer = new LostViewer(new Menu("Start"))
-        def gui = Mock(LanternaGUI.class, constructorArgs: [30, 30])
         when:
         viewer.drawElements(gui)
         then:

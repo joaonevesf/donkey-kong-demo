@@ -1,6 +1,6 @@
 package com.aor.DK.viewer
 
-import com.aor.DK.GUI.LanternaGUI
+import com.aor.DK.GUI.GUI
 import com.aor.DK.model.elements.Barrel
 import com.aor.DK.model.elements.DonkeyKong
 import com.aor.DK.model.elements.Fire
@@ -22,10 +22,16 @@ import com.aor.DK.viewer.elements.SwitchViewer
 import spock.lang.Specification
 
 class AllBasicViewerTest extends Specification{
+
+    GUI gui
+
+    def setup(){
+        gui = Mock(GUI)
+    }
+
     def 'Testing barrel viewer'(){
         given:
         def viewer = new BarrelViewer()
-        def gui = Mock(LanternaGUI.class, constructorArgs:[30, 30])
         def barrel = Mock(Barrel.class, constructorArgs: [1,1])
         when:
         viewer.draw(barrel,gui)
@@ -36,7 +42,6 @@ class AllBasicViewerTest extends Specification{
     def 'Testing donkey kong viewer'(){
         given:
         def viewer = new DonkeyKongViewer()
-        def gui = Mock(LanternaGUI.class, constructorArgs:[30, 30])
         def donkeyKong = Mock(DonkeyKong.class, constructorArgs: [1, 1])
         when:
         viewer.draw(donkeyKong,gui)
@@ -47,7 +52,6 @@ class AllBasicViewerTest extends Specification{
     def 'Testing fire viewer'(){
         given:
         def viewer = new FireViewer()
-        def gui = Mock(LanternaGUI.class, constructorArgs:[30, 30])
         def fire = Mock(Fire.class, constructorArgs: [1,1])
         when:
         viewer.draw(fire,gui)
@@ -58,7 +62,6 @@ class AllBasicViewerTest extends Specification{
     def 'Testing floor viewer'(){
         given:
         def viewer = new FloorViewer()
-        def gui = Mock(LanternaGUI.class, constructorArgs:[30, 30])
         def floor = Mock(Floor.class, constructorArgs: [1, 1])
         when:
         viewer.draw(floor,gui)
@@ -69,7 +72,6 @@ class AllBasicViewerTest extends Specification{
     def 'Testing mario viewer'(){
         given:
         def viewer = new MarioViewer()
-        def gui = Mock(LanternaGUI.class, constructorArgs:[30, 30])
         def mario = Mock(Mario.class, constructorArgs: [1, 1])
         when:
         viewer.draw(mario,gui)
@@ -80,7 +82,6 @@ class AllBasicViewerTest extends Specification{
     def 'Testing princess viewer'(){
         given:
         def viewer = new PrincessViewer()
-        def gui = Mock(LanternaGUI.class, constructorArgs:[30, 30])
         def princess = Mock(Princess.class, constructorArgs: [1, 1])
         when:
         viewer.draw(princess,gui)
@@ -91,7 +92,6 @@ class AllBasicViewerTest extends Specification{
     def 'Testing stair viewer'(){
         given:
         def viewer = new StairViewer()
-        def gui = Mock(LanternaGUI.class, constructorArgs:[30, 30])
         def stair = Mock(Stair.class, constructorArgs: [1, 1])
         when:
         viewer.draw(stair,gui)
@@ -102,7 +102,6 @@ class AllBasicViewerTest extends Specification{
     def 'Testing switch viewer'(){
         given:
         def viewer = new SwitchViewer()
-        def gui = Mock(LanternaGUI.class, constructorArgs:[30, 30])
         def s = Mock(Switch.class, constructorArgs: [1, 1])
         s.isOn() >> true
         when:
@@ -114,7 +113,6 @@ class AllBasicViewerTest extends Specification{
     def 'Testing switch viewer with switch off'(){
         given:
         def viewer = new SwitchViewer()
-        def gui = Mock(LanternaGUI.class, constructorArgs:[30, 30])
         def s = Mock(Switch.class, constructorArgs: [1, 1])
         s.isOn() >> false
         when:
@@ -126,7 +124,6 @@ class AllBasicViewerTest extends Specification{
     def 'Testing stick viewer'(){
         given:
         def viewer = new StickViewer()
-        def gui = Mock(LanternaGUI.class, constructorArgs:[30, 30])
         def stick = Mock(Stick.class, constructorArgs: [1, 1])
         when:
         viewer.draw(stick,gui)

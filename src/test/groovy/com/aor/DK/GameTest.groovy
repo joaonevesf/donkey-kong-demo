@@ -1,17 +1,16 @@
 package com.aor.DK
 
+import com.aor.DK.GUI.GUI
 import spock.lang.Specification
-
-import com.aor.DK.GUI.LanternaGUI
 
 
 class GameTest extends Specification {
     Game game
-    LanternaGUI gui
-/*
+    GUI gui
+
     def setup() {
-        gui = Mock(LanternaGUI.class, constructorArgs:[30, 30])
-        game = new Game()
+        gui = Mock(GUI)
+        game = new Game(null)
     }
 
     def 'Testing setState method'() {
@@ -21,5 +20,5 @@ class GameTest extends Specification {
         then:
         game.state == null
     }
-*/
+
 }

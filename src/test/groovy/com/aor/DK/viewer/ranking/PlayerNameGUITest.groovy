@@ -8,18 +8,18 @@ import spock.lang.Specification
 import java.awt.event.ActionEvent
 
 class PlayerNameGUITest extends Specification{
+
    def 'Testing action button ok'(){
         given:
-        Ranking ranking = new Ranking()
-        Game game = Mock(Game.class, constructorArgs:[new LanternaGUI(10,10)])
+        Game game = Mock(Game.class, constructorArgs:[null])
         PlayerNameGUI gui = new PlayerNameGUI(game, 1000)
-        int size = ranking.getList().size()
         when:
         gui.actionButtonOk(new ActionEvent(new Object(), 1, ""))
+        Ranking ranking = new Ranking()
         then:
-        ranking.getList().get(size - 1).score == 1000
+        ranking.getList().get(ranking.getList().size() - 1).score == 1000
         cleanup:
-        ranking.getList().remove(size - 1)
+        ranking.getList().remove(ranking.getList().size() - 1)
         ranking.save()
     }
 
