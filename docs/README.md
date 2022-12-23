@@ -465,6 +465,17 @@ The code can change using design Patterns like the state or strategy. In the pre
 
 ### BETTER CODE HUB
 
+There are 4 parameters that needs to improve. The architecture balance happens because most of the code is in arena and the game. Also, the interfaces aren't small because of code smells that we talked about. Automate test doesn't apply to all the code and isn't simple because... 
+
+<p align="center">
+  <img src="img/Better Code Hub.png" alt="">
+</p>
+
+<p align="center">
+  <b><i>Img 20. Better Code Hub </i></b>
+</p>
+<br>
+
 ### TESTING
 
 <p>
