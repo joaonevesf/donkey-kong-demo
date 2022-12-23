@@ -256,12 +256,15 @@
 
 **Problem in Context**
 
-From a beginner's point of view, it's difficult to create a game and connect all the dots. Because the user wants to have his commands interpreted, stored, easily viewable, and being logical for them. This Design Pattern is a solution that puts it all together in a easy way.
+From a beginner's point of view, it's difficult to create a game and connect all the dots. 
+Because the user wants to have his commands interpreted, stored, easily viewable, and being logical for them. 
+This Design Pattern is a solution that puts it all together in a easy way.
 
 
 **The Pattern**
 
-The whole game is based on the MVC architecture. Therefore, the View is a representation of the input data by the user, the Controller manipulates the Model according to the users input, and the Model represents the logical part of the backend data in the game.
+The whole game is based on the MVC architecture. Therefore, the View is a representation of the input data by the user, 
+the Controller manipulates the Model according to the users input, and the Model represents the logical part of the backend data in the game.
 
 <p align="center">
   <img src="img/mvc.png" alt="">
@@ -299,9 +302,12 @@ _Disadvantages:_
 ### Factory Method
 **Problem in Context**
 
-The problem is based on the high count of components that need to be represented and also the resemblances between the components. So, the game must have a Design Pattern to not implement the same code twice or more. 
-The Menu, Game, between Levels and Ranking are similar because they need a view (a representation of the data). Some elements are the same, for instance: 'the between levels' (Img. 9) has a Donkey Kong and the gameplay also has. 
-And which element is similar, for example, Mario and the Princess are both chars, they differ in their color and the chosen char, but the method to draw is the same.
+The problem is based on the high count of components that need to be represented and also the resemblances between the components. 
+So, the game must have a Design Pattern to not implement the same code twice or more. 
+The Menu, Game, between Levels and Ranking are similar because they need a view (a representation of the data). 
+Some elements are the same, for instance: 'the between levels' (Img. 9) has a Donkey Kong and the gameplay also has. 
+And which element is similar, for example, Mario and the Princess are both chars, they differ in their color and the chosen char, 
+but the method to draw is the same.
 
 **The Pattern**
 
@@ -352,11 +358,15 @@ _Disadvantage:_
 
 **Problem in Context**
 
-Actually, the game has some states (Examples: Menu and Gameplay) on the graphic interface, and on controller. For each state, has a different way to behave: it represents different views; different actions has different consequences. Because, all the states need these, is needed a design to make the code is easier to implement and comprehend.
+Actually, the game has some states (Examples: Menu and Gameplay) on the graphic interface, and on controller. 
+For each state, has a different way to behave: it represents different views; different actions has different consequences. 
+Because, all the states need these, is needed a design to make the code is easier to implement and comprehend.
 
 **The Pattern**
 
-State Pattern is a Behavioral software design pattern, it's a way to solve similar recurring issues. When the internal state changes, alters its behavior. Within any unique state, the program behaves differently, and the program can be switched from one state to another instantaneously.
+State Pattern is a Behavioral software design pattern, it's a way to solve similar recurring issues. 
+When the internal state changes, alters its behavior. Within any unique state, the program behaves differently, and 
+the program can be switched from one state to another instantaneously.
 
 <p align="center">
   <img src="img/state.png" alt="">
@@ -394,12 +404,15 @@ _Disadvantage_:
 
 **Problem in Context**
 
-A situation that occurs frequently is what happened previously in MVC. So the user makes an action, and then the controller handles the input, the model updates the game and in the end it is visible because of the updated viewer.
+A situation that occurs frequently is what happened previously in MVC. So the user makes an action, and then the 
+controller handles the input, the model updates the game and in the end it is visible because of the updated viewer.
 This happens always the same way, so the game needs to handle this sequence of events without using a 'while' or a 'for' loop.
 
 **The Pattern**
 
-It's used in almost every game, and it's considered one of the basics of programming, avoiding inserting repeated data. It tracks the passage of time and with each turn of the loop, it processes user input without being blocked. For example, this could've been used to define that Donkey Kong throws barrels until Mario reaches the top floor.
+It's used in almost every game, and it's considered one of the basics of programming, avoiding inserting repeated data. 
+It tracks the passage of time and with each turn of the loop, it processes user input without being blocked. For example, 
+this could've been used to define that Donkey Kong throws barrels until Mario reaches the top floor.
 
 **Implementation**
 
@@ -422,7 +435,8 @@ _Benefits:_
 **Bloaters**
 - **Large Class**
 
-  An example of a large Class is MarioController. This happens because Mario is a very important element and controls the winning and losing condition, the ranking, and others... Because of that, it is easier to put all in the same class. Where other classes are called, but the flow of data always starts here. A way to solve this is to extract some subclasses.
+  An example of a large Class is MarioController. This happens because Mario is a very important element and controls the winning and 
+- losing condition, the ranking, and others... Because of that, it is easier to put all in the same class. Where other classes are called, but the flow of data always starts here. A way to solve this is to extract some subclasses.
 
 <p align="center">
   <img src="img/largeClass.png" alt="">
@@ -438,7 +452,8 @@ _Benefits:_
 - **Switch Statements**
 
   In menuController, there is an example of a switch. It's not the only one, and inside that switch there are a sequence of if statements. 
-The code can change using design Patterns like the state or strategy. In the previous example (MarioController), can exist a Mario loose and a Mario win... Or it can  Replace Conditional with Polymorphism. 
+The code can change using design Patterns like the state or strategy. In the previous example (MarioController), can exist a Mario loose 
+- and a Mario win... Or it can  Replace Conditional with Polymorphism. 
 
 <p align="center">
   <img src="img/switch.png" alt="">
@@ -454,18 +469,25 @@ The code can change using design Patterns like the state or strategy. In the pre
 **Dispensables**
   - **Comments**
 
-    Along the code some comments to justify why things are done like that. Besides being a smell, it's necessary because it can help other person that did not make the code.
+    Along the code some comments to justify why things are done like that. Besides being a smell, it's necessary because it can help other 
+  - person that did not make the code.
     A class that contains this smell is in FireController.
     Using comments is an indication that the code is to complicated, and to make it simpler, can extract the method or introduce assertion.  
 
 
   - **Data Class**
 
-    In Arena there are a lot of classes, many of them are Data Classes like getWidth, setMario and setBarrels (getters and setters). They can be a 'Self Encapsulate Field' and should remove the setting methods.
+    In Arena there are a lot of classes, many of them are Data Classes like getWidth, setMario and setBarrels (getters and setters). 
+  - They can be a 'Self Encapsulate Field' and should remove the setting methods.
 
 ### BETTER CODE HUB
 
-There are 4 parameters that needs to improve. The architecture balance happens because most of the code is in arena and the game. Also, the interfaces aren't small because of code smells that we talked about. Automate test doesn't apply to all the code and isn't simple because... 
+There are 4 parameters that needs to improve. The architecture balance happens because most of the code is in arena and the game. 
+Also, the interfaces aren't small because of code smells that we talked about. 
+
+Automate test doesn't apply to all the code and isn't simple because some methods, 
+like the step() method, need a lot of information to act in the right way since a lot of methods 
+are private and can only be tested through the step method. We also tried to reach 100% line coverage, which caused a lot of tests to expand.
 
 <p align="center">
   <img src="img/Better Code Hub.png" alt="">
@@ -478,16 +500,12 @@ There are 4 parameters that needs to improve. The architecture balance happens b
 
 ### TESTING
 
-<p>
-  <img width=918 src="img/testcoverage1.png" alt="">
-</p>
-
-![](img/testcoverage1.png)
+![test coverage on intermediate delivery](img/testcoverage1.png)
 
 
-![](img/mutation-results-print.png)
+![mutation results on intermediate delivery](img/mutation-results-print.png)
 
-- [mutation tests](mutation-test-results)
+- [mutation test results intermediate](mutation-test-results)
 
 ### SELF-EVALUATION
 

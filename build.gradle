@@ -34,14 +34,6 @@ test {
 
 pitest {
     junit5PluginVersion = '1.0.0'
-    excludedTestClasses = ['com.aor.DK.controller.*','com.aor.DK.GUI.*',
-                           'com.aor.DK.viewer.AllBasicViewerTest',
-                           'com.aor.DK.viewer.LevelViewerTest',
-                           'com.aor.DK.viewer.MenuViewerTest',
-                           'com.aor.DK.viewer.RankingViewerTest',
-                           'com.aor.DK.viewer.ranking.*',
-                           'com.aor.DK.GameTest',
-                           'com.aor.DK.model.elements.BarrelTest'
-    ]
+    excludedTestClasses = ['com.aor.DK.GUI.GUITest','com.aor.DK.viewer.ranking.PlayerNameGUITest']
 
 }

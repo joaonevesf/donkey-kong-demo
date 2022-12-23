@@ -17,7 +17,6 @@ class BarrelControllerTest extends Specification {
     List floor
     Game game
 
-
     def setup() {
         arena = new Arena(10,10)
         barrelController = new BarrelController(arena)
@@ -58,6 +57,7 @@ class BarrelControllerTest extends Specification {
         then:
         arena.getBarrels().get(0).getPosition().x == 0
     }
+
     def "test move barrel right method"() {
         given:
         stair.add(new Stair(0,0))
