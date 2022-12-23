@@ -22,12 +22,13 @@ class MenuControllerTest extends Specification{
         then:
         game.getState().getModel().getMod() == "Start"
     }
-/*
+
     def 'Testing menu controller step GUI.ACTION.UP'(){
         given:
         def menuController = new MenuController(new Menu("Start"))
         when:
         menuController.step(game,[GUI.ACTION.UP],100)
+        game.getState().setModel(menuController.getModel())
         then:
         game.getState().getModel().isSelectedNumber(3)
     }
@@ -36,11 +37,12 @@ class MenuControllerTest extends Specification{
         given:
         def menuController = new MenuController(new Menu("Start"))
         when:
-        menuController.step(game,[GUI.ACTION.UP],100)
+        menuController.step(game,[GUI.ACTION.DOWN],100)
+        game.getState().setModel(menuController.getModel())
         then:
         game.getState().getModel().isSelectedNumber(1)
     }
-*/
+
 
     def 'Testing menu controller step select exit'(){
         given:

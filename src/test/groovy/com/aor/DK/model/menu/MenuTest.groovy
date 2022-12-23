@@ -86,8 +86,4 @@ class MenuTest extends Specification{
         menu.getMessage() == "Instructions"
         menu.getMod() == "Instructions"
     }
-
-
-
-
 }

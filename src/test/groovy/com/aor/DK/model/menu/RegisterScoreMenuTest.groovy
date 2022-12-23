@@ -9,6 +9,5 @@ class RegisterScoreMenuTest extends Specification{
         def registerScore = new RegisterScoreMenu("Start", 100)
         expect:
         registerScore.getScore() == 100
-
     }
 }
