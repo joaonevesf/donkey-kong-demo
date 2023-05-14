@@ -1,4 +1,4 @@
-# L00T01G09 - Donkey Kong<PROJECT NAME>
+# L00T01G09 - Donkey Kong Demo
 
 
 > The project is based on an arcade game of 1981 the 'Donkey Kong'. The monkey (Donkey Kong) is the main enemy who Mario (the jumpman) has to fight against. An important characteristic is the ability to jump, since it was the first arcade game to incorporate it. Therefore, the goal of the game is for Mario to reach the princess, in the highest floor. But he will have to face Donkey Kong that is on rampage throwing barrels, and climb some dangerous stairs.
